@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Without Profile Dropdown</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .sidebar-link:hover {
+        background-color: rgba(59, 125, 221, 0.075);
+        border-left: 3px solid #3b7ddd;
+    }
+</style>
+
+<body>
+    <div class="flex justify-between items-center bg-green-200 text-white p-4">
+        <div class="flex items-center">
+            <button class="text-xl bg-transparent border-none cursor-pointer text-black">
+                <i class="lni lni-menu"></i>
+            </button>
+            <div class="Logo ml-4">
+                <img src="logo.png" alt="Logo" class="h-12">
+            </div>
+        </div>
+    </div>
+    <div class="flex">
+        <aside id="sidebar" class="w-20 min-w-20 bg-white hidden flex-col">
+            <ul class="py-4 flex-1">
+                <li class="mb-4">
+                    <a href="#" class="sidebar-link flex items-center p-4 text-black">
+                        <i class="lni lni-grid-alt mr-4"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-header flex items-center p-4 text-black">
+                    <span>Menu</span>
+                    <hr class="sidebar-divider flex-grow h-px bg-white ml-4">
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="sidebar-link flex items-center p-4 text-black">
+                        <i class="lni lni-users mr-4"></i>
+                        <span>Borrower</span>
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="sidebar-link flex items-center p-4 text-black">
+                        <i class="lni lni-users mr-4"></i>
+                        <span>Employee</span>
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="sidebar-link flex items-center p-4 text-black">
+                        <i class="lni lni-add-files mr-4"></i>
+                        <span>Reports</span>
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="sidebar-link flex items-center p-4 text-black">
+                        <i class="lni lni-popup mr-4"></i>
+                        <span>Online Application</span>
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="sidebar-link flex items-center p-4 text-black">
+                        <i class="lni lni-layout mr-4"></i>
+                        <span>Payment Records</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="sidebar-footer p-4">
+                <hr class="sidebar-divider">
+                <p class="text-center text-green-500 italic text-xs">
+                    TD3 SMART FUND CREDIT CORPORATION
+                </p>
+                <p class="text-center text-green-500 italic text-xs">
+                    est. 2015
+                </p>
+            </div>
+        </aside>
+        <div class="main p-4 w-full">
+            <div class="text-center">
+                <h1 class="text-2xl font-bold">
+                    Hello everyone
+                </h1>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
+    <script>
+        const hamBurger = document.querySelector(".text-xl");
+
+        hamBurger.addEventListener("click", function () {
+            document.querySelector("#sidebar").classList.toggle("hidden");
+            document.querySelector("#sidebar").classList.toggle("flex");
+        });
+    </script>
+</body>
+
+</html>

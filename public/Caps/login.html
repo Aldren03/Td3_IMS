@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width-device-width, initial-scale-1.0">
+    <title>Login/Signup Form</title>
+    <link rel="stylesheet" href="#">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<style>
+   * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: url(Tarlac\ Branch.jpg) no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px 80px;
+        background: linear-gradient(to right, #000000, #15683a);
+        border: 2px solid rgba(0, 0, 0, 0.5);
+        display: flex;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(20px);
+        justify-content: space-between;
+        align-items: center;
+        z-index: 99;
+    }
+
+    header .Logo img {
+        height: 60px;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+
+    header .Logo .logo-text {
+        font-size: .5cm;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .navigation a {
+        position: relative;
+        font-size: .5cm;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        margin-left: 40px;
+    }
+
+    .navigation a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 100%;
+        height: 3px;
+        background: #fff;
+        border-radius: 5px;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform .5s;
+    }
+
+    .navigation a:hover::after {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+
+    .wrapper {
+        position: absolute;
+        width: 420px;
+        height: 440px;
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        border-radius: 30px;
+        backdrop-filter: blur(15px);
+        box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transform: scale(0);
+        transition: transform .5s ease, height .2s ease;
+    }
+
+    .info-box {
+            padding: 10px;
+            margin: 20px 0;
+            border-left: 6px solid #0e792a;
+        }
+
+        .info-box p {
+            margin: 0;
+            color: #f8f8f8;
+            top: 10px;
+            right: 30px;
+        }
+</style>
+<body>
+    <header>
+        <div class="Logo"> <img src="logo.png" alt="Logo" class="logo-removebg-preview.png">
+            <span class="logo-text">TD3 SMART FUND CREDIT CORPORATION</span>
+        </div>
+        <nav class="navigation">
+            <a href="#">Home</a>
+            <a href="#">Offer</a>
+            <a href="#">About TD3</a>
+        </nav>
+    </header>
+    <div class="info-box">
+        <p>TD3 Smart Fund is an corporation that engaged in granting loans from its own capital funds or funds from their beloved lending investors</p>
+        <p></p>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
