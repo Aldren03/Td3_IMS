@@ -52,7 +52,7 @@ class AdminController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
     
-        // Create user account
+
         $user = User::create([
             'name' => $request->employeeName,
             'email' => $request->email,
@@ -60,14 +60,13 @@ class AdminController extends Controller
             'usertype' => $request->position,
         ]);
     
-        // Create employee and link to user
+
         $employee = new Employee();
         $employee->employee_name = $request->employeeName;
         $employee->position = $request->position;
         $employee->status = $request->status;
         $employee->user_id = $user->id;
-    
-        // Check if an image file is uploaded and process it
+  
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
@@ -75,7 +74,7 @@ class AdminController extends Controller
             $employee->image = $imageName;
         }
     
-        // Save the employee record
+      
         $employee->save();
     
         return redirect()->back()->with('success', 'Employee and user account created successfully.');
@@ -141,7 +140,7 @@ class AdminController extends Controller
 
     public function submitApplication(Request $request)
     {
-        // Validate request data
+       
         $validatedData = $request->validate([
             'reference_no' => '|string|max:255|unique:borrower_forms,reference_no',
             'borrower_title' => 'required|string',
@@ -174,20 +173,16 @@ class AdminController extends Controller
             'reference_address' => 'nullable|string|max:255',
         ]);
 
-    
         if ($request->hasFile('picture')) {
             $picturePath = $request->file('picture')->store('public/pictures');
             $validatedData['picture'] = $picturePath;
         }
 
-        // Store the data in the database
         Borrower::create($validatedData);
 
-        // Redirect or return success response
-        return redirect()->route('admin.application.success'); // You should create a success route or view
+        
+        return redirect()->route('admin.application.success'); 
     }
-
-    
 
     public function showPendingApplications()
     {
@@ -284,12 +279,12 @@ class AdminController extends Controller
     {
         $search = $request->input('search');
     
-        // Fetch data from Borrower model
+        
         $data = Borrower::when($search, function($query) use ($search) {
             $query->where('borrower_name', 'like', '%' . $search . '%');
         })->get();
     
-        // Fetch data from BorrowerForm model
+       
         $applications = BorrowerForm::when($search, function($query) use ($search) {
             $query->where('borrower_name', 'like', '%' . $search . '%');
         })->get();
