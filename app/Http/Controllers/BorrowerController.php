@@ -11,11 +11,10 @@
         {
             return view ('borrower.index');
         }
-        // Method to show the application form
+        
         public function showForm()
         {
-            return view('borrower.application'); // Replace with the actual path to your Blade template
-        }
+            return view('borrower.application');
 
         public function submitApplication(Request $request)
     {
@@ -54,7 +53,7 @@
             'status' => 'nullable|string|in:pending,approved,rejected',
         ]);
 
-        // Generate a unique reference number
+     
         $validatedData['reference_no'] = uniqid('TD3-OA-');
 
         BorrowerForm::create($validatedData);
